@@ -1,0 +1,19 @@
+﻿@using stFacturacion.CustomHelpers
+@model stFacturacion.Models.Articulo
+           
+ <div class="control-group">   
+    @Html.LabelFor(model => model.formapago, "Forma de pago", new { @class = "control-label" })
+<div class="controls">   
+@Html.DropDownList("formaPagoid", ViewBag.formapagos as SelectList, String.Empty)
+<a class="btn btn-small btn-primary" href="@Url.Content("~/Pago/Create")" 
+    id="pagoAddLink">
+    <i class="icon-plus icon-white"></i> Añadir</a>
+@Html.ValidationMessageFor(model => model.formaPagoid)
+</div>
+</div>
+<div id="pagoDialog" class="hidden">
+</div>
+
+
+
+

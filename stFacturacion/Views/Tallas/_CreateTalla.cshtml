@@ -1,0 +1,17 @@
+﻿@model stFacturacion.Models.Talla 
+@using (Html.BeginForm("Create", "Tallas", FormMethod.Post, new { id = "createTallaForm" }))
+{
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descripciontalla)
+        <br /> 
+        @Html.ValidationMessageFor(model => model.descripciontalla)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.descripciontalla)
+    </div>  
+   
+    
+}
+

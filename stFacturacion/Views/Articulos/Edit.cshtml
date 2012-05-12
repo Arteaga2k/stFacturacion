@@ -1,0 +1,83 @@
+﻿@model stFacturacion.Models.Articulo
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Articulo</legend>
+
+        @Html.HiddenFor(model => model.articuloId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.descripcionarticulo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.descripcionarticulo)
+            @Html.ValidationMessageFor(model => model.descripcionarticulo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tallaId, "talla")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("tallaId", String.Empty)
+            @Html.ValidationMessageFor(model => model.tallaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tarifaId, "tarifa")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("tarifaId", String.Empty)
+            @Html.ValidationMessageFor(model => model.tarifaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tipoivaId, "tipoiva")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("tipoivaId", String.Empty)
+            @Html.ValidationMessageFor(model => model.tipoivaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.colorId, "color")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("colorId", String.Empty)
+            @Html.ValidationMessageFor(model => model.colorId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.familiaId, "familia")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("familiaId", String.Empty)
+            @Html.ValidationMessageFor(model => model.familiaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.formaPagoid, "formapago")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("formaPagoid", String.Empty)
+            @Html.ValidationMessageFor(model => model.formaPagoid)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

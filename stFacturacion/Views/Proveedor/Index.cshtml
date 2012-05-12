@@ -1,0 +1,81 @@
+﻿@model IEnumerable<stFacturacion.Models.Proveedor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p><h1>Lista <small>de proveedor</small></h1></p>
+
+<p>@Html.ActionLink("[+] Crear Nuevo", "Create", null, new { @class = "btn btn-primary" })</p>
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>NIF</th>
+        <th>Localidad</th>
+        <th>Provincia</th>
+        <th>Código Postal</th>
+        <th>Teléfono</th>
+        <th>Teléfono móvil</th>
+        <th>Fax</th>
+        <th>Contacto</th>
+        <th>E-mail</th>
+        <th>Iva</th>
+        <th>Recargo</th>
+        <th>Forma de pago</th>        
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nif)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.localidad.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.provincia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tlf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tlfmov)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contacto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Iva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formapago.descripcionformapago)
+        </td>       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.proveedorId }) 
+            @Html.ActionLink("Details", "Details", new { id=item.proveedorId }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.proveedorId })
+        </td>
+    </tr>
+}
+</tbody>
+</table>

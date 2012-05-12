@@ -1,0 +1,68 @@
+﻿@model IEnumerable<stFacturacion.Models.Articulo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p><h1>Lista <small>de artículos</small></h1></p>
+
+<p>
+    @Html.ActionLink("[+] Crear nuevo", "Create",null,new { @class = "btn btn-primary" })
+</p>
+<table class="table table-striped table-bordered">
+<thead>
+    <tr>
+        <th>Artículo</th>
+        <th>Talla</th>
+        <th>tarifa
+        </th>
+        <th>
+            tipoiva
+        </th>
+        <th>
+            color
+        </th>
+        <th>
+            Familia
+        </th>
+        <th>
+            Forma de Pago
+        </th>   
+        <th>Opciones</th>     
+    </tr>
+    </thead>
+    <tbody>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcionarticulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.talla.tallaId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tarifa.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipoiva.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.color.descripcioncolor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.familia.descripcionfamilia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formapago.descripcionformapago)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.articuloId },new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.articuloId }, new { @class = "btn" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.articuloId }, new { @class = "btn" })
+        </td>
+    </tr>
+}
+</tbody>
+
+</table>

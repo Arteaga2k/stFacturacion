@@ -1,0 +1,17 @@
+﻿@model stFacturacion.Models.Familia 
+@using (Html.BeginForm("Create", "Familia", FormMethod.Post, new { id = "createFamiliaForm" }))
+{
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descripcionfamilia)
+        <br /> 
+        @Html.ValidationMessageFor(model => model.descripcionfamilia)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.descripcionfamilia)
+    </div>    
+    
+    
+}
+

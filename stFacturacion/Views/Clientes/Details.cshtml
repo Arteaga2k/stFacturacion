@@ -1,0 +1,87 @@
+﻿@model stFacturacion.Models.Cliente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Información detallada</h2>
+
+<div class="row">
+ <div span="span8">
+  <div class="hero-unit">
+   
+    <p>Nombre:    
+        @Html.DisplayFor(model => model.nombre)
+    </p>
+
+    <p>Direccion:    
+        @Html.DisplayFor(model => model.direccion)
+    </p>
+   
+
+    <p>Código Postal:    
+        @Html.DisplayFor(model => model.cp)
+    </p>
+    
+
+    <p>Ciudad: 
+        @Html.DisplayFor(model => model.ciudad)
+    </p>
+
+    <p>País: 
+        @Html.DisplayFor(model => model.pais)
+    </p>
+
+    <p>Localidad: 
+    
+        @Html.DisplayFor(model => model.Localidad.nombre)
+    </p>
+
+    <p>NIF:    
+        @Html.DisplayFor(model => model.nif)
+    </p>
+
+    <p>Teléfono:     
+        @Html.DisplayFor(model => model.tlf)
+    </p>
+
+    <p>Móvil:     
+        @Html.DisplayFor(model => model.tlfmov)
+    </p>
+
+    <p>Fax:     
+        @Html.DisplayFor(model => model.fax)
+    </p>
+
+    <p>Web:     
+        @Html.DisplayFor(model => model.web)
+    </p>
+
+    <p>E-mail:     
+        @Html.DisplayFor(model => model.email)
+    </p>
+
+    <p>Contacto:     
+        @Html.DisplayFor(model => model.contacto)
+    </p>
+
+    <p>Iva:     
+        @Html.DisplayFor(model => model.Iva)
+    </p>
+
+    <p>Recargo:     
+        @Html.DisplayFor(model => model.Recargo)
+    </p>
+
+    <p>Forma de pago:     
+        @Html.DisplayFor(model => model.formaPago.descripcionformapago)
+    </p>
+
+    </div>
+    </div>
+    </div>
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ClienteId }, new { @class = "btn btn-primary" }) 
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn" })
+</p>

@@ -1,0 +1,43 @@
+﻿@model stFacturacion.Models.AlbaranCompra
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>AlbaranCompra</legend>
+
+        @Html.HiddenFor(model => model.albaranCompraId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.albaranDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.albaranDate)
+            @Html.ValidationMessageFor(model => model.albaranDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proveedorId, "proveedor")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("proveedorId", String.Empty)
+            @Html.ValidationMessageFor(model => model.proveedorId)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

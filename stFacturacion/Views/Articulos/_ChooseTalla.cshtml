@@ -1,0 +1,17 @@
+﻿@using stFacturacion.CustomHelpers
+@model stFacturacion.Models.Articulo
+ <div class="control-group"> 
+ <!--<div class="editor-label">-->
+    @Html.LabelFor(model => model.talla, "Talla", new { @class = "control-label" })
+<!--</div>-->
+<div class="controls">   
+@Html.DropDownList("tallaId", ViewBag.tallas as SelectList,String.Empty)
+<a class="btn btn-small btn-primary" href="@Url.Content("~/Tallas/Create")" id="tallaAddLink">
+<i class="icon-plus icon-white"></i> Añadir</a>
+@Html.ValidationMessageFor(model => model.tallaId)
+</div>
+</div>
+<div id="tallaDialog" class="hidden">
+</div>
+
+<script src="@Url.Content("~/Scripts/chooseTalla.js")"></script>

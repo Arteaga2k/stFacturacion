@@ -1,0 +1,84 @@
+﻿@model IEnumerable<stFacturacion.Models.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p><h1>Lista <small>de clientes</small></h1></p>
+
+<p>
+    @Html.ActionLink("[+] Crear Nuevo", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-striped table-bordered">
+ <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        
+        
+        <th>País</th>
+        <th>Localidad</th>
+        
+        <th>Teléfono</th>
+        <th>Móvil</th>
+       
+        
+        <th>E-mail</th>
+        
+        <th>Iva</th>
+        <th>Recargo</th>
+        <th>Forma de pago</th>
+        <th>Opciones</th>
+    </tr>
+   </thead>
+   <tbody>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion)
+        </td>
+        
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.pais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Localidad.nombre)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.tlf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tlfmov)
+        </td>
+       
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Iva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formaPago.descripcionformapago)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ClienteId },new { @class = "btn btn-primary" }) 
+            @Html.ActionLink("Detalles", "Details", new { id = item.ClienteId }, new { @class = "btn" }) 
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.ClienteId }, new { @class = "btn" })
+        </td>
+    </tr>
+    
+}
+</tbody>
+
+</table>

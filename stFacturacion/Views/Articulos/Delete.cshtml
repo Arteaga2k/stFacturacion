@@ -1,0 +1,53 @@
+﻿@model stFacturacion.Models.Articulo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Articulo</legend>
+
+    <div class="display-label">descripcionarticulo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descripcionarticulo)
+    </div>
+
+    <div class="display-label">talla</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.talla.tallaId)
+    </div>
+
+    <div class="display-label">tarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tarifa.descripcion)
+    </div>
+
+    <div class="display-label">tipoiva</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tipoiva.descripcion)
+    </div>
+
+    <div class="display-label">color</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.color.descripcioncolor)
+    </div>
+
+    <div class="display-label">familia</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.familia.descripcionfamilia)
+    </div>
+
+    <div class="display-label">formapago</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.formapago.descripcionformapago)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

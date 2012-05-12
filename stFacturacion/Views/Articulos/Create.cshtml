@@ -1,0 +1,64 @@
+﻿@using stFacturacion.CustomHelpers
+@model stFacturacion.Models.Articulo
+
+@{
+    ViewBag.Title = "Creación nuevo artículo";
+}
+
+<div class="alert">
+<a class="close" data-dismiss="alert" href="#">×</a>
+<h4 class="alert-heading">Información!</h4>
+<p><strong>Estás creando un nuevo artículo</strong></p>
+</div>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm("Create","Articulos",FormMethod.Post,new {@class="form-horizontal"})) 
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Edición Artículo</legend>
+        <div class="control-group">        
+            @Html.LabelFor(model => model.descripcionarticulo, new { @class = "control-label" })
+            <div class="controls">       
+                @Html.EditorFor(model => model.descripcionarticulo)
+                @Html.ValidationMessageFor(model => model.descripcionarticulo)
+            </div>
+        </div>
+
+        <div class="editor-field ui-widget">
+        @Html.Partial("_ChooseTalla")
+        </div>
+
+        <div class="editor-field ui-widget ">
+        @Html.Partial("_ChooseTarifa")
+        </div>
+
+        <div class="editor-field ui-widget ">
+        @Html.Partial("_ChooseTipoIva")
+        </div>
+
+        <div class="editor-field ui-widget">
+        @Html.Partial("_ChooseColor")
+        </div>
+
+        <div class="editor-field ui-widget ">
+        @Html.Partial("_ChooseFamilia")
+        </div>   
+
+        <div class="editor-field ui-widget ">
+        @Html.Partial("_ChoosePago")
+        </div>
+        <div class="form-actions">
+          <input type="submit" class="btn btn-primary" value="Crear" />     
+          @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn" })
+    </fieldset>
+  
+}
+
+
+
+
+
+

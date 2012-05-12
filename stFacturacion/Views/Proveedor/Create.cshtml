@@ -1,0 +1,161 @@
+﻿@using stFacturacion.CustomHelpers
+@model stFacturacion.Models.Proveedor
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="alert">
+<a class="close" data-dismiss="alert" href="#">×</a>
+<h4 class="alert-heading">Información!</h4>
+<p><strong>Estás creando un nuevo Proveedor</strong></p>
+</div>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm("Create","Proveedor",FormMethod.Post,new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Proveedor</legend>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.nombre, new { @class = "control-label" })
+        
+        <div class="controls">
+            @Html.EditorFor(model => model.nombre)
+            @Html.ValidationMessageFor(model => model.nombre)
+        </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.nif, new { @class = "control-label" })
+        
+        <div class="controls">
+            @Html.EditorFor(model => model.nif)
+            @Html.ValidationMessageFor(model => model.nif)
+        </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.localidadId, "localidad", new { @class = "control-label" })
+            <div class="controls">
+            @Html.DropDownList("localidadId", String.Empty)
+            @Html.ValidationMessageFor(model => model.localidadId)
+            </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.provincia, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.provincia)
+            @Html.ValidationMessageFor(model => model.provincia)
+         </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.cp, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.cp)
+            @Html.ValidationMessageFor(model => model.cp)
+          </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.tlf, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.tlf)
+            @Html.ValidationMessageFor(model => model.tlf)
+        </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.tlfmov, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.tlfmov)
+            @Html.ValidationMessageFor(model => model.tlfmov)
+          </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.fax, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.fax)
+            @Html.ValidationMessageFor(model => model.fax)
+          </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.contacto, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.contacto)
+            @Html.ValidationMessageFor(model => model.contacto)
+          </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.email, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+          </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.Iva, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.Iva)
+            @Html.ValidationMessageFor(model => model.Iva)
+          </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.Recargo, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.Recargo)
+            @Html.ValidationMessageFor(model => model.Recargo)
+          </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.formaPagoid, "Forma de pago", new { @class = "control-label" })
+          <div class="controls">
+            @Html.DropDownList("formaPagoid", String.Empty)
+            @Html.ValidationMessageFor(model => model.formaPagoid)
+          </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.diapago, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.diapago)
+            @Html.ValidationMessageFor(model => model.diapago)
+          </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.banco, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.banco)
+            @Html.ValidationMessageFor(model => model.banco)
+          </div>
+        </div>
+
+        <div class="control-group"> 
+            @Html.LabelFor(model => model.ccc, new { @class = "control-label" })
+          <div class="controls">
+            @Html.EditorFor(model => model.ccc)
+            @Html.ValidationMessageFor(model => model.ccc)
+          </div>
+        </div>
+
+         <div class="form-actions">
+            <input type="submit" class="btn btn-primary" value="Crear" />                
+            @Html.ActionLink("Cancelar", "Index",null, new { @class = "btn" })
+        </div>
+       
+    </fieldset>
+}
+
+

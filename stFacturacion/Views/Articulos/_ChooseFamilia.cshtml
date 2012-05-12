@@ -1,0 +1,16 @@
+﻿@using stFacturacion.CustomHelpers
+@model stFacturacion.Models.Articulo
+ <div class="control-group">   
+    @Html.LabelFor(model => model.familia, "Familia", new { @class = "control-label" })
+<div class="controls">   
+@Html.DropDownList("familiaId", ViewBag.familias as SelectList,String.Empty)
+<a class="btn btn-small btn-primary" href="@Url.Content("~/Familia/Create")" 
+    id="familiaAddLink"><i class="icon-plus icon-white"></i> Añadir</a>
+@Html.ValidationMessageFor(model => model.familiaId)
+</div>
+</div>
+<div id="familiaDialog" class="hidden">
+</div>
+
+
+<script src="@Url.Content("~/Scripts/chooseFamilia.js")"></script>

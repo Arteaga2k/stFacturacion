@@ -1,0 +1,25 @@
+﻿@model stFacturacion.Models.AlbaranCompra
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AlbaranCompra</legend>
+
+    <div class="display-label">albaranDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.albaranDate)
+    </div>
+
+    <div class="display-label">proveedor</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proveedor.nombre)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.albaranCompraId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

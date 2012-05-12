@@ -1,0 +1,18 @@
+﻿@using stFacturacion.CustomHelpers
+@model stFacturacion.Models.Articulo
+           
+<div class="control-group">  
+     @Html.LabelFor(model => model.color, "Color", new { @class = "control-label" })    
+  <div class="controls">   
+    @Html.DropDownList("colorId", ViewBag.colores as SelectList,String.Empty)
+    <a class="btn btn-small btn-primary" href="@Url.Content("~/Colores/Create")" id="colorAddLink">
+    <!--<i class="icon-plus icon-white"></i>--> Añadir</a>  
+    @Html.ValidationMessageFor(model => model.colorId)
+   </div>
+</div>
+
+<div id="colorDialog" class="hidden"></div>
+
+
+
+<script src="@Url.Content("~/Scripts/chooseColor.js")"></script>

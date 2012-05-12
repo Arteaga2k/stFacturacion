@@ -1,0 +1,16 @@
+﻿@model stFacturacion.Models.Color 
+@using (Html.BeginForm("Create", "Colores", FormMethod.Post, new { id = "createColorForm" }))
+{
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descripcioncolor)
+        <br /> 
+        @Html.ValidationMessageFor(model => model.descripcioncolor)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.descripcioncolor)
+    </div>
+    
+}
+

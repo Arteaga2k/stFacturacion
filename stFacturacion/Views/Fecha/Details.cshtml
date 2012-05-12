@@ -1,0 +1,20 @@
+﻿@model stFacturacion.Models.Fecha
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Fecha</legend>
+
+    <div class="display-label">fecha</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.fechaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

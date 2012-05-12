@@ -1,0 +1,99 @@
+﻿@model stFacturacion.Models.Cliente
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="alert alert-error">
+<a class="close" data-dismiss="alert" href="#">×</a>
+<h4 class="alert-heading">Cuidado!</h4>
+<p><strong>¿Seguro que de sea eliminar este Cliente?</strong></p>
+</div>
+
+<fieldset>
+    <legend>Cliente</legend>
+
+    <p>Nombre:     
+        @Html.DisplayFor(model => model.nombre)
+    </p>
+
+    <p>Dirección:     
+        @Html.DisplayFor(model => model.direccion)
+    </p>
+
+    <div class="display-label">cp</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cp)
+    </div>
+
+    <div class="display-label">ciudad</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ciudad)
+    </div>
+
+    <div class="display-label">pais</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pais)
+    </div>
+
+    <div class="display-label">Localidad</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Localidad.nombre)
+    </div>
+
+    <div class="display-label">nif</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nif)
+    </div>
+
+    <div class="display-label">tlf</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tlf)
+    </div>
+
+    <div class="display-label">tlfmov</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tlfmov)
+    </div>
+
+    <div class="display-label">fax</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fax)
+    </div>
+
+    <div class="display-label">web</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.web)
+    </div>
+
+    <div class="display-label">email</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">contacto</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.contacto)
+    </div>
+
+    <div class="display-label">Iva</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Iva)
+    </div>
+
+    <div class="display-label">Recargo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Recargo)
+    </div>
+
+    <div class="display-label">formaPago</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.formaPago.descripcionformapago)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

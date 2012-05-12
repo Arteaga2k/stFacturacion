@@ -1,0 +1,38 @@
+﻿  @using stFacturacion.CustomHelpers
+@model stFacturacion.Models.AlbaranCompra
+  
+  <div class="control-group">
+            <label class="control-label">Descripcion :</label>
+            <div class="controls">
+                @Html.TextBox("articuloId")
+            </div>
+         </div>
+
+         <div class="control-group">
+            <label class="control-label">Talla :</label>
+            <div class="controls">            
+                @Html.TextBox("tallaId")
+            </div>
+         </div>
+
+         <div class="control-group">
+            <label class="control-label">Color :</label>
+            <div class="controls">            
+                @Html.TextBox("colorId")
+            </div>
+         </div>
+
+
+        <div class="control-group">   
+            <label class="control-label">Cantidad :</label>
+            <div class="controls">
+            @Html.TextBox("Qty")
+            </div>
+        </div>
+
+        <div class="control-group">   
+            <label class="control-label">Precio :</label>
+            <div class="controls">
+            @Html.TextBox("UnitPrice")
+            </div>
+        </div>

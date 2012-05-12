@@ -1,0 +1,51 @@
+﻿@using stFacturacion.CustomHelpers
+@model stFacturacion.Models.LogOnModel
+
+@{
+    ViewBag.Title = "Iniciar sesión";
+}
+
+<h2>Iniciar sesión</h2>
+<p>
+    Escriba su nombre de usuario y contraseña. @Html.ActionLink("Regístrese", "Register") si no tiene una cuenta.
+</p>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@Html.ValidationSummary(true, "No se ha iniciado la sesión. Corrija los errores e inténtelo de nuevo.")
+
+@using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div>
+        <fieldset>
+            <legend>Información de la cuenta</legend>
+
+            <div class="control-group">
+                @Html.LabelFor(m => m.UserName, new { @class = "control-label" })
+              <div class="controls">
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+              </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+              <div class="controls">
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+              </div>
+            </div>
+
+            <div class="control-group">
+            <div class="controls">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe)
+            </div>
+            </div>
+
+            <div class="form-actions">
+            <input type="submit" class="btn btn-primary" value="Iniciar sesión" />             
+        </fieldset>
+    </div>
+}

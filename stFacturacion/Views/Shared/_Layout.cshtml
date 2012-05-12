@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    
+
+    
+    <!-- Le styles -->
+    <link href="@Url.Content("~/Scripts/assets/css/bootstrap.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Scripts/assets/css/bootstrap-responsive.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Scripts/assets/css/docs.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Scripts/assets/js/google-code-prettify/prettify.css")" rel="stylesheet">
+
+     <script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-2.5.3.min.js")" type="text/javascript"></script>
+    <link href="@Url.Content( "~/Content/themes/base/jquery.ui.all.css" )" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content( "~/Scripts/ui/jquery.ui.combobox.css" )" rel="stylesheet"  type="text/css" />
+    <script src="@Url.Content( "~/Scripts/jquery-ui-1.8.19.js" )"  type="text/javascript"></script>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->     
+
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>          
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="./index.html"><h3>Software ST facturación online</h3></a>
+              </li>               
+            </ul >   
+            <p class="nav pull-right">@Html.Partial("_LogOnPartial")</p>
+            </ul>         
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container-fluid">       
+
+            <!-- Masthead
+            ================================================== -->
+             @if (Request.IsAuthenticated){
+                     <text>  
+           <header class="jumbotron subhead" id="overview">
+              <!--<h2>Software ST facturación online</h2>-->
+              <!--<p class="lead">On top of the scaffolding, basic HTML elements are styled and enhanced with extensible classes to provide a fresh, consistent look and feel.</p>-->
+              <div class="subnav subnav-fixed ">
+                <ul class="nav nav-pills">
+                  <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Localidades","Index", "Localidades")</li>
+                    <li>@Html.ActionLink("Clientes","Index","Clientes")</li>
+                    <li>@Html.ActionLink("Artículos","Index","Articulos")</li>
+                    <li>@Html.ActionLink("Proveedores","Index","Proveedor")</li>   
+                    <li>@Html.ActionLink("Vendedores","Index","Vendedor")</li>
+                </ul>
+              </div>
+            </header>   
+               </text>
+                 }       
+        <div class="container-fluid">      
+           
+            @RenderBody()
+
+      <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+       <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Diseñador y creador  <a href="mailto:cav1662@hotmail.com">Arteaga</a>.</p>
+        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+
+      </footer>
+    </div> <!--/Container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <!--<script src="@Url.Content("~/Scripts/assets/js/jquery.js")"></script>-->
+    <script src="@Url.Content("~/Scripts/assets/js/google-code-prettify/prettify.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-transition.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-alert.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-modal.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-dropdown.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-scrollspy.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-tab.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-tooltip.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-popover.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-button.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-collapse.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-carousel.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/bootstrap-typeahead.js")"></script>
+    <script src="@Url.Content("~/Scripts/assets/js/application.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/chooseFormaPago.js")"></script>
+</body>
+</html>

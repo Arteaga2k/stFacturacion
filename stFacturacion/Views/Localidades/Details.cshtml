@@ -1,0 +1,20 @@
+﻿@model stFacturacion.Models.localidad
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>localidad</legend>
+
+    <div class="display-label">nombre</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.localidadId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

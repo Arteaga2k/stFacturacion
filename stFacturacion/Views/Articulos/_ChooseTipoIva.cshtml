@@ -1,0 +1,17 @@
+﻿@using stFacturacion.CustomHelpers
+@model stFacturacion.Models.Articulo
+ <div class="control-group"> 
+    @Html.LabelFor(model => model.tipoiva, "Tipo de Iva", new { @class = "control-label" })
+<div class="controls">   
+@Html.DropDownList("tipoivaId", ViewBag.tipoiva as SelectList, String.Empty)
+<a class="btn btn-small btn-primary" href="@Url.Content("~/Iva/Create")" 
+    id="ivaAddLink">
+    <i class="icon-plus icon-white"></i> Añadir</a>
+@Html.ValidationMessageFor(model => model.tipoivaId)
+</div>
+</div>
+<div id="ivaDialog" class="hidden">
+</div>
+
+
+<script src="@Url.Content("~/Scripts/chooseIva.js")"></script>

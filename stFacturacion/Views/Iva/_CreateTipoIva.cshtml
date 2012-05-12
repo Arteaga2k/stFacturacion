@@ -1,0 +1,25 @@
+﻿@model stFacturacion.Models.TipoIva 
+@using (Html.BeginForm("Create", "Iva", FormMethod.Post, new { id = "createIvaForm" }))
+{
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descripcion)
+        <br /> 
+        @Html.ValidationMessageFor(model => model.descripcion)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.descripcion)
+    </div>
+    
+     <div class="editor-label">
+        @Html.LabelFor(model => model.porcentaje)
+        <br /> 
+        @Html.ValidationMessageFor(model => model.porcentaje)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.porcentaje)
+    </div>
+    
+}
+

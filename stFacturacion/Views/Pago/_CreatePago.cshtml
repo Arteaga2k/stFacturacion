@@ -1,0 +1,16 @@
+﻿@model stFacturacion.Models.FormaPago 
+@using (Html.BeginForm("Create", "Pago", FormMethod.Post, new { id = "createFormaPagoForm" }))
+{
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descripcionformapago)
+        <br /> 
+        @Html.ValidationMessageFor(model => model.descripcionformapago)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.descripcionformapago)
+    </div>
+    
+}
+

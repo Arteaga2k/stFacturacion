@@ -1,0 +1,95 @@
+﻿@model stFacturacion.Models.Proveedor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Proveedor</legend>
+
+    <div class="display-label">nombre</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">nif</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nif)
+    </div>
+
+    <div class="display-label">localidad</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.localidad.nombre)
+    </div>
+
+    <div class="display-label">provincia</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.provincia)
+    </div>
+
+    <div class="display-label">cp</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cp)
+    </div>
+
+    <div class="display-label">tlf</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tlf)
+    </div>
+
+    <div class="display-label">tlfmov</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tlfmov)
+    </div>
+
+    <div class="display-label">fax</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fax)
+    </div>
+
+    <div class="display-label">contacto</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.contacto)
+    </div>
+
+    <div class="display-label">email</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">Iva</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Iva)
+    </div>
+
+    <div class="display-label">Recargo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Recargo)
+    </div>
+
+    <div class="display-label">formapago</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.formapago.descripcionformapago)
+    </div>
+
+    <div class="display-label">diapago</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.diapago)
+    </div>
+
+    <div class="display-label">banco</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.banco)
+    </div>
+
+    <div class="display-label">ccc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ccc)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.proveedorId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
